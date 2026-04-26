@@ -61,7 +61,7 @@ function initLightbox() {
   const closeBtn = document.getElementById('lightbox-close');
   const prevBtn  = document.getElementById('lightbox-prev');
   const nextBtn  = document.getElementById('lightbox-next');
-  if (imgs.length === 0 || !lightbox) return;
+  if (imgs.length === 0 || !lightbox || !lbImg || !closeBtn || !prevBtn || !nextBtn) return;
 
   let current = 0;
 
