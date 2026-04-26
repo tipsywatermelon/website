@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — TINYDISCO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] } } } }</script>
+</head>
+<body class="bg-[#0a0a0a] text-white font-sans antialiased">
+
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-[#222222]">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-white font-bold tracking-[0.25em] uppercase text-lg">TINYDISCO</a>
+      <ul class="hidden md:flex items-center gap-8">
+        <li><a href="gallery.html"  class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Gallery</a></li>
+        <li><a href="packages.html" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Packages</a></li>
+        <li><a href="about.html"    class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">About</a></li>
+        <li><a href="faq.html"      class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">FAQ</a></li>
+        <li><a href="contact.html"  class="bg-white text-black text-xs font-bold tracking-widest uppercase px-6 py-2.5 hover:bg-[#e8e8e8] transition-colors duration-200" style="border-radius:2px">Book Now</a></li>
+      </ul>
+      <button id="hamburger" class="md:hidden text-white p-1" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" style="display:none" class="fixed inset-0 z-50 bg-[#0a0a0a] flex-col items-center justify-center">
+    <button id="close-menu" class="absolute top-6 right-6 text-white p-1" aria-label="Close menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <ul class="flex flex-col items-center gap-10">
+      <li><a href="index.html"    class="text-white text-2xl tracking-[0.2em] uppercase">Home</a></li>
+      <li><a href="gallery.html"  class="text-white text-2xl tracking-[0.2em] uppercase">Gallery</a></li>
+      <li><a href="packages.html" class="text-white text-2xl tracking-[0.2em] uppercase">Packages</a></li>
+      <li><a href="about.html"    class="text-white text-2xl tracking-[0.2em] uppercase">About</a></li>
+      <li><a href="faq.html"      class="text-white text-2xl tracking-[0.2em] uppercase">FAQ</a></li>
+      <li><a href="contact.html"  class="text-white text-2xl tracking-[0.2em] uppercase">Book Now</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="pt-36 pb-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-[#999999] text-xs tracking-[0.4em] uppercase mb-3">Our Work</p>
+      <h1 class="text-4xl md:text-5xl font-bold">Gallery</h1>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID -->
+  <section class="pb-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-01.png" alt="Gallery image 1" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-02.png" alt="Gallery image 2" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-03.png" alt="Gallery image 3" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-04.png" alt="Gallery image 4" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-05.png" alt="Gallery image 5" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-06.png" alt="Gallery image 6" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-07.png" alt="Gallery image 7" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-[#1a1a1a] overflow-hidden cursor-pointer"><img src="images/gallery-08.png" alt="Gallery image 8" class="gallery-img w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" style="display:none" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center">
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-[#999999] transition-colors" aria-label="Close">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    <button id="lightbox-prev" class="absolute left-4 md:left-8 text-white hover:text-[#999999] transition-colors" aria-label="Previous">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-[85vw] max-h-[85vh] object-contain">
+    <button id="lightbox-next" class="absolute right-4 md:right-8 text-white hover:text-[#999999] transition-colors" aria-label="Next">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0a0a0a] border-t border-[#222222] py-10 px-6 text-center">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-white font-bold tracking-[0.25em] uppercase text-sm mb-5">TINYDISCO</p>
+      <div class="flex items-center justify-center gap-8 mb-6">
+        <a href="https://instagram.com/" target="_blank" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Instagram</a>
+        <a href="mailto:hello@tinydisco.com" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Email</a>
+      </div>
+      <p class="text-[#999999] text-xs tracking-widest">© 2026 TINYDISCO. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
