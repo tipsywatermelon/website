@@ -105,6 +105,7 @@ function initContactForm() {
   const form = document.getElementById('booking-form');
   if (!form) return;
   const errorMsg = document.getElementById('form-error');
+  if (!errorMsg) return;
 
   form.addEventListener('submit', e => {
     e.preventDefault();
