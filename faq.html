@@ -6,66 +6,34 @@
   <title>FAQ — TINYDISCO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] } } } }</script>
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
-<body class="bg-[#0a0a0a] text-white font-sans antialiased">
+<body class="bg-theme-base text-theme-primary font-sans antialiased">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-[#222222]">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-white font-bold tracking-[0.25em] uppercase text-lg">TINYDISCO</a>
-      <ul class="hidden md:flex items-center gap-8">
-        <li><a href="gallery.html"  class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Gallery</a></li>
-        <li><a href="packages.html" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Packages</a></li>
-        <li><a href="about.html"    class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">About</a></li>
-        <li><a href="faq.html"      class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">FAQ</a></li>
-        <li><a href="contact.html"  class="bg-white text-black text-xs font-bold tracking-widest uppercase px-6 py-2.5 hover:bg-[#e8e8e8] transition-colors duration-200" style="border-radius:2px">Book Now</a></li>
-      </ul>
-      <button id="hamburger" class="md:hidden text-white p-1" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu" style="display:none" class="fixed inset-0 z-50 bg-[#0a0a0a] flex-col items-center justify-center">
-    <button id="close-menu" class="absolute top-6 right-6 text-white p-1" aria-label="Close menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-    <ul class="flex flex-col items-center gap-10">
-      <li><a href="index.html"    class="text-white text-2xl tracking-[0.2em] uppercase">Home</a></li>
-      <li><a href="gallery.html"  class="text-white text-2xl tracking-[0.2em] uppercase">Gallery</a></li>
-      <li><a href="packages.html" class="text-white text-2xl tracking-[0.2em] uppercase">Packages</a></li>
-      <li><a href="about.html"    class="text-white text-2xl tracking-[0.2em] uppercase">About</a></li>
-      <li><a href="faq.html"      class="text-white text-2xl tracking-[0.2em] uppercase">FAQ</a></li>
-      <li><a href="contact.html"  class="text-white text-2xl tracking-[0.2em] uppercase">Book Now</a></li>
-    </ul>
-  </div>
+  <site-nav></site-nav>
 
   <!-- PAGE HERO -->
   <section class="pt-36 pb-16 px-6 text-center">
     <div class="max-w-7xl mx-auto">
-      <p class="text-[#999999] text-xs tracking-[0.4em] uppercase mb-3">Questions</p>
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">Questions</p>
       <h1 class="text-4xl md:text-5xl font-bold">FAQ</h1>
     </div>
   </section>
 
   <!-- ACCORDION -->
   <section class="pb-24 px-6">
-    <div class="max-w-3xl mx-auto divide-y divide-[#222222]">
+    <div class="max-w-3xl mx-auto divide-y divide-theme">
 
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">What areas do you serve?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           We serve [Your City] and the surrounding [X]-mile radius. For events beyond that, a travel fee may apply. Contact us and we'll let you know right away.
         </div>
       </div>
@@ -73,9 +41,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">Is a deposit required to book?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Yes, we require a [X]% deposit to hold your date. The remaining balance is due [X] days before your event.
         </div>
       </div>
@@ -83,9 +51,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">How long does setup take?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Setup typically takes 45–60 minutes. We arrive early so the booth is fully operational when your event begins.
         </div>
       </div>
@@ -93,9 +61,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">How fast do prints come out?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Prints are ready in about 15 seconds. Guests walk away with a studio-quality print immediately.
         </div>
       </div>
@@ -103,9 +71,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">Are props included?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Yes! All packages include a curated prop collection. Premium packages include additional themed props.
         </div>
       </div>
@@ -113,9 +81,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">How do guests receive their digital photos?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Guests can receive photos instantly via text or email right from the booth. A full digital gallery is delivered to the host within 48 hours.
         </div>
       </div>
@@ -123,9 +91,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">What is your cancellation policy?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Cancellations made more than [X] days before the event receive a full refund minus the deposit. Cancellations within [X] days forfeit the deposit.
         </div>
       </div>
@@ -133,9 +101,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">Can you do outdoor events?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Yes, with some conditions. We need a flat, sheltered surface (tent or covered area) and access to a standard power outlet within 50 feet.
         </div>
       </div>
@@ -143,9 +111,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">Can I customize the print design?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           Absolutely. Standard and Premium packages include a fully custom overlay with your names, date, logo, or event branding.
         </div>
       </div>
@@ -153,9 +121,9 @@
       <div data-faq-item class="py-6">
         <button data-faq-btn class="w-full flex items-center justify-between text-left gap-8">
           <span class="text-sm font-medium tracking-wide">How far in advance should I book?</span>
-          <span data-faq-icon class="text-[#999999] text-xl flex-shrink-0">+</span>
+          <span data-faq-icon class="text-theme-secondary text-xl flex-shrink-0">+</span>
         </button>
-        <div data-faq-body style="display:none" class="mt-4 text-[#999999] text-sm leading-relaxed">
+        <div data-faq-body style="display:none" class="mt-4 text-theme-secondary text-sm leading-relaxed">
           We recommend booking at least 4–6 weeks in advance, especially for peak seasons (spring and fall). That said, reach out even if your event is soon — we'll do our best to accommodate.
         </div>
       </div>
@@ -163,18 +131,9 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#0a0a0a] border-t border-[#222222] py-10 px-6 text-center">
-    <div class="max-w-7xl mx-auto">
-      <p class="text-white font-bold tracking-[0.25em] uppercase text-sm mb-5">TINYDISCO</p>
-      <div class="flex items-center justify-center gap-8 mb-6">
-        <a href="https://instagram.com/" target="_blank" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Instagram</a>
-        <a href="mailto:hello@tinydisco.com" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Email</a>
-      </div>
-      <p class="text-[#999999] text-xs tracking-widest">© 2026 TINYDISCO. All rights reserved.</p>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 
+  <script src="js/components.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -6,141 +6,124 @@
   <title>TINYDISCO — Photo Booth Rentals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] } } } }</script>
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
-<body class="bg-[#0a0a0a] text-white font-sans antialiased">
+<body class="bg-theme-base text-theme-primary font-sans antialiased">
 
-  <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm border-b border-[#222222]">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="text-white font-bold tracking-[0.25em] uppercase text-lg">TINYDISCO</a>
-      <ul class="hidden md:flex items-center gap-8">
-        <li><a href="gallery.html"  class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Gallery</a></li>
-        <li><a href="packages.html" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Packages</a></li>
-        <li><a href="about.html"    class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">About</a></li>
-        <li><a href="faq.html"      class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">FAQ</a></li>
-        <li><a href="contact.html"  class="bg-white text-black text-xs font-bold tracking-widest uppercase px-6 py-2.5 hover:bg-[#e8e8e8] transition-colors duration-200" style="border-radius:2px">Book Now</a></li>
-      </ul>
-      <button id="hamburger" class="md:hidden text-white p-1" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu" style="display:none" class="fixed inset-0 z-50 bg-[#0a0a0a] flex-col items-center justify-center">
-    <button id="close-menu" class="absolute top-6 right-6 text-white p-1" aria-label="Close menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-    <ul class="flex flex-col items-center gap-10">
-      <li><a href="index.html"    class="text-white text-2xl tracking-[0.2em] uppercase">Home</a></li>
-      <li><a href="gallery.html"  class="text-white text-2xl tracking-[0.2em] uppercase">Gallery</a></li>
-      <li><a href="packages.html" class="text-white text-2xl tracking-[0.2em] uppercase">Packages</a></li>
-      <li><a href="about.html"    class="text-white text-2xl tracking-[0.2em] uppercase">About</a></li>
-      <li><a href="faq.html"      class="text-white text-2xl tracking-[0.2em] uppercase">FAQ</a></li>
-      <li><a href="contact.html"  class="text-white text-2xl tracking-[0.2em] uppercase">Book Now</a></li>
-    </ul>
-  </div>
+  <site-nav></site-nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center">
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="images/hero.png" alt="tinydisco photo booth at an event" class="w-full h-full object-cover">
-      <div class="absolute inset-0 bg-[#0a0a0a]/60"></div>
+      <div class="absolute inset-0 w-full h-full" style="pointer-events:none;overflow:hidden;">
+        <!-- <iframe
+          id="hero-video"
+          src="https://www.youtube.com/embed/9zmKG440ahI?autoplay=1&mute=1&loop=1&playlist=9zmKG440ahI&controls=0&showinfo=0&rel=0&modestbranding=1&start=632&enablejsapi=1"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen
+          style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);pointer-events:none;"
+        ></iframe> -->
+      </div>
+      <div class="absolute inset-0 bg-black/60"></div>
     </div>
-    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto pt-16">
-      <p class="text-[#999999] text-xs tracking-[0.4em] uppercase mb-5">Photo Booth Rentals</p>
+    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto pt-16 text-white">
+      <p class="text-white/70 text-xs tracking-[0.4em] uppercase mb-5">Photo Booth Rentals | Greater NYC and Long Island</p>
       <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">Capture Every<br>Moment in Style</h1>
-      <p class="text-[#999999] text-sm tracking-[0.3em] uppercase mb-12">Weddings · Corporate · Parties</p>
-      <a href="contact.html" class="inline-block bg-white text-black text-xs font-bold tracking-widest uppercase px-10 py-4 hover:bg-[#e8e8e8] transition-colors duration-200" style="border-radius:2px">Book Now</a>
+      <p class="text-white/70 text-sm tracking-[0.3em] uppercase mb-12">Weddings · Corporate · Parties</p>
+      <a href="contact.html" class="sparkle-btn"><span class="sparkle-btn__text">Book Now</span><span class="sparkle-btn__glare" aria-hidden="true">Book Now</span></a>
     </div>
   </section>
 
   <!-- FEATURES -->
-  <section class="py-24 px-6 bg-[#111111]">
+  <section class="py-24 px-6 bg-theme-section">
     <div class="max-w-7xl mx-auto">
-      <p class="text-[#999999] text-xs tracking-[0.4em] uppercase mb-3">What We Offer</p>
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">What We Offer</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-14">An Experience, Not Just Photos</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-        <div class="bg-[#1a1a1a] border border-[#222222] p-8 text-center">
+        <div class="bg-theme-card border border-theme p-8 text-center">
           <div class="text-3xl mb-5">📸</div>
           <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Instant Prints</h3>
-          <p class="text-[#999999] text-xs leading-relaxed">Studio-quality prints on the spot</p>
+          <p class="text-theme-secondary text-xs leading-relaxed">Studio-quality prints on the spot</p>
         </div>
-        <div class="bg-[#1a1a1a] border border-[#222222] p-8 text-center">
+        <div class="bg-theme-card border border-theme p-8 text-center">
           <div class="text-3xl mb-5">🎨</div>
           <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Custom Overlays</h3>
-          <p class="text-[#999999] text-xs leading-relaxed">Branded to your event</p>
+          <p class="text-theme-secondary text-xs leading-relaxed">Branded to your event</p>
         </div>
-        <div class="bg-[#1a1a1a] border border-[#222222] p-8 text-center">
+        <div class="bg-theme-card border border-theme p-8 text-center">
           <div class="text-3xl mb-5">✨</div>
           <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Props &amp; Setup</h3>
-          <p class="text-[#999999] text-xs leading-relaxed">Full styling included</p>
+          <p class="text-theme-secondary text-xs leading-relaxed">Full styling included</p>
         </div>
-        <div class="bg-[#1a1a1a] border border-[#222222] p-8 text-center">
+        <div class="bg-theme-card border border-theme p-8 text-center">
           <div class="text-3xl mb-5">📲</div>
           <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Digital Sharing</h3>
-          <p class="text-[#999999] text-xs leading-relaxed">Text &amp; email delivery</p>
+          <p class="text-theme-secondary text-xs leading-relaxed">Text &amp; email delivery</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- GALLERY TEASER -->
-  <section class="py-24 px-6 bg-[#0a0a0a]">
+  <section class="py-24 px-6 bg-theme-base">
     <div class="max-w-7xl mx-auto">
-      <p class="text-[#999999] text-xs tracking-[0.4em] uppercase mb-3">Gallery</p>
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">Gallery</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-14">See the Magic</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-        <div class="aspect-square bg-[#1a1a1a] overflow-hidden"><img src="images/gallery-01.png" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
-        <div class="aspect-square bg-[#1a1a1a] overflow-hidden"><img src="images/gallery-02.png" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
-        <div class="aspect-square bg-[#1a1a1a] overflow-hidden"><img src="images/gallery-03.png" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
-        <div class="aspect-square bg-[#1a1a1a] overflow-hidden hidden md:block"><img src="images/gallery-04.png" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
-        <div class="aspect-square bg-[#1a1a1a] overflow-hidden hidden md:block"><img src="images/gallery-05.png" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
-        <div class="aspect-square bg-[#1a1a1a] overflow-hidden hidden md:block"><img src="images/gallery-06.png" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-theme-card overflow-hidden"><img src="images/IMG_0219.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-theme-card overflow-hidden"><img src="images/IMG_0257.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-theme-card overflow-hidden"><img src="images/IMG_0275.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-theme-card overflow-hidden hidden md:block"><img src="images/IMG_0337.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-theme-card overflow-hidden hidden md:block"><img src="images/IMG_0340.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
+        <div class="aspect-square bg-theme-card overflow-hidden hidden md:block"><img src="images/IMG_0260.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
       </div>
       <div class="text-center mt-10">
-        <a href="gallery.html" class="text-[#999999] hover:text-white text-xs tracking-[0.3em] uppercase border-b border-[#444444] pb-1 transition-colors duration-200">View Full Gallery →</a>
+        <a href="gallery.html" class="text-theme-secondary hover-text-primary text-xs tracking-[0.3em] uppercase border-b border-theme pb-1 transition-colors duration-200">View Full Gallery →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES TEASER -->
+  <section class="py-24 px-6 bg-theme-section">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">Explore Our Packages</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-5">SNAP, PRINT, MAKE IT YOURS.</h2>
+      <p class="text-theme-secondary text-sm leading-relaxed max-w-xl mb-14">We offer custom photo overlays, a curated prop collection, and branded print designs built around your event's vibe. Perfect for adding a personal, unforgettable touch to any celebration.</p>
+      <div id="home-package-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"></div>
+      <div class="text-center">
+        <a href="packages.html" class="text-theme-secondary hover-text-primary text-xs tracking-[0.3em] uppercase border-b border-theme pb-1 transition-colors duration-200">View All Packages →</a>
       </div>
     </div>
   </section>
 
   <!-- TESTIMONIAL -->
-  <section class="py-24 px-6 bg-[#111111]">
+  <section class="py-24 px-6 bg-theme-base">
     <div class="max-w-3xl mx-auto text-center">
-      <p class="text-[#999999] text-xs tracking-[0.4em] uppercase mb-14">What Clients Say</p>
-      <blockquote class="text-2xl md:text-3xl font-light leading-relaxed text-white mb-8">"tinydisco made our wedding unforgettable. Every single guest was obsessed with the booth."</blockquote>
-      <cite class="text-[#999999] text-xs tracking-widest uppercase not-italic">— Sarah M., Wedding Client</cite>
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-14">What Clients Say</p>
+      <blockquote class="text-2xl md:text-3xl font-light leading-relaxed text-theme-primary mb-8">"tinydisco made our wedding unforgettable. Every single guest was obsessed with the booth."</blockquote>
+      <cite class="text-theme-secondary text-xs tracking-widest uppercase not-italic">— Nina R., Wedding Client</cite>
     </div>
   </section>
 
   <!-- CTA BANNER -->
-  <section class="py-24 px-6 bg-[#0a0a0a] text-center">
+  <section class="py-24 px-6 bg-theme-base text-center">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-5">Ready to Make It Memorable?</h2>
-      <p class="text-[#999999] text-sm tracking-wide mb-12">Starting at $X · Serving [Your Area]</p>
-      <a href="contact.html" class="inline-block bg-white text-black text-xs font-bold tracking-widest uppercase px-10 py-4 hover:bg-[#e8e8e8] transition-colors duration-200" style="border-radius:2px">Get a Quote</a>
+      <p class="text-theme-secondary text-sm tracking-wide mb-12">Serving Greater New York City and Long Island</p>
+      <a href="contact.html" class="sparkle-btn"><span class="sparkle-btn__text">Get a Quote</span><span class="sparkle-btn__glare" aria-hidden="true">Get a Quote</span></a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#0a0a0a] border-t border-[#222222] py-10 px-6 text-center">
-    <div class="max-w-7xl mx-auto">
-      <p class="text-white font-bold tracking-[0.25em] uppercase text-sm mb-5">TINYDISCO</p>
-      <div class="flex items-center justify-center gap-8 mb-6">
-        <a href="https://instagram.com/" target="_blank" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Instagram</a>
-        <a href="mailto:hello@tinydisco.com" class="text-[#999999] hover:text-white text-xs tracking-widest uppercase transition-colors duration-200">Email</a>
-      </div>
-      <p class="text-[#999999] text-xs tracking-widest">© 2026 TINYDISCO. All rights reserved.</p>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 
+  <script src="js/components.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/packages.js"></script>
+  <script>renderPackageCards('home-package-cards', { condensed: true });</script>
 </body>
 </html>

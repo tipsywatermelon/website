@@ -100,32 +100,12 @@ function initLightbox() {
   });
 }
 
-// ─── Contact Form Validation ──────────────────────────────────────────────────
-function initContactForm() {
-  const form = document.getElementById('booking-form');
-  if (!form) return;
-  const errorMsg = document.getElementById('form-error');
-  if (!errorMsg) return;
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let valid = true;
-
-    form.querySelectorAll('input, select, textarea').forEach(f => f.classList.remove('border-red-500'));
-
-    form.querySelectorAll('[required]').forEach(f => {
-      if (!f.value.trim()) { f.classList.add('border-red-500'); valid = false; }
-    });
-
-    const emailField = form.querySelector('[type="email"]');
-    if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-      emailField.classList.add('border-red-500');
-      valid = false;
-    }
-
-    if (!valid) { errorMsg.style.display = 'block'; return; }
-    errorMsg.style.display = 'none';
-    form.submit();
+// ─── Sparkle Buttons ──────────────────────────────────────────────────────────
+function initSparkleButtons() {
+  const SPARKLE_SVG = '<svg viewBox="0 0 96 96" fill="none" aria-hidden="true"><path d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z" fill="#fff"/></svg>';
+  const sparkles = SPARKLE_SVG.repeat(5);
+  document.querySelectorAll('.sparkle-btn').forEach(btn => {
+    btn.insertAdjacentHTML('afterbegin', sparkles);
   });
 }
 
@@ -134,5 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initAccordion();
   initLightbox();
-  initContactForm();
+  initSparkleButtons();
 });
