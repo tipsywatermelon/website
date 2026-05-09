@@ -6,7 +6,7 @@
   <title>TINYDISCO — Photo Booth Rentals</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Tenor+Sans&display=fallback" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] } } } }</script>
   <link rel="stylesheet" href="css/button.css">
@@ -17,52 +17,47 @@
   <site-nav></site-nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0">
-      <div class="absolute inset-0 w-full h-full" style="pointer-events:none;overflow:hidden;">
-        <!-- <iframe
-          id="hero-video"
-          src="https://www.youtube.com/embed/9zmKG440ahI?autoplay=1&mute=1&loop=1&playlist=9zmKG440ahI&controls=0&showinfo=0&rel=0&modestbranding=1&start=632&enablejsapi=1"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen
-          style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;transform:translate(-50%,-50%);pointer-events:none;"
-        ></iframe> -->
-      </div>
-      <div class="absolute inset-0 bg-black/60"></div>
+  <section class="overflow-hidden">
+    
+    <!-- Text on clean background, above the image -->
+    
+    <div class="w-full mt-12" style="height:70vh;min-height:300px;">
+      <img src="images/IMG_0238.JPG" alt="TINYDISCO photo booth in action" class="w-full h-full object-cover object-center">
     </div>
-    <div class="relative z-10 text-center px-6 max-w-3xl mx-auto pt-16 text-white">
-      <p class="text-white/70 text-xs tracking-[0.4em] uppercase mb-5">Photo Booth Rentals | Greater NYC and Long Island</p>
-      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">Capture Every<br>Moment in Style</h1>
-      <p class="text-white/70 text-sm tracking-[0.3em] uppercase mb-12">Weddings · Corporate · Parties</p>
+    <div class="bg-theme-card text-center px-6 pt-6 pb-6 md:pt-6 md:pb-6">
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-5">Photo Booth Rentals | NYC and Long Island</p>
+      <h1 class="text-5xl md:text-7xl leading-tight text-theme-primary" style="font-weight: 600;">Big memories,<br><span class="text-4xl md:text-6xl italic leading-tight block mb-6 text-theme-primary" style="font-weight: 100;">tinydisco</span></h1>
+      <p class="text-theme-secondary text-sm tracking-[0.3em] uppercase mb-6">Weddings · Corporate · Parties</p>
       <a href="contact.html" class="sparkle-btn"><span class="sparkle-btn__text">Book Now</span><span class="sparkle-btn__glare" aria-hidden="true">Book Now</span></a>
     </div>
+    
+
   </section>
 
   <!-- FEATURES -->
-  <section class="py-24 px-6 bg-theme-section">
+  <section class="py-16 md:py-24 px-6 bg-theme-section">
     <div class="max-w-7xl mx-auto">
       <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">What We Offer</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-14">An Experience, Not Just Photos</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
-        <div class="bg-theme-card border border-theme p-8 text-center">
-          <div class="text-3xl mb-5">📸</div>
-          <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Instant Prints</h3>
+      <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-14">An Experience, Not Just Photos</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+        <div class="bg-theme-card border border-theme p-5 md:p-8 text-center">
+          <div class="text-3xl mb-4 md:mb-5">📸</div>
+          <h3 class="text-xs font-semibold tracking-widest uppercase mb-2 md:mb-3">Instant Prints</h3>
           <p class="text-theme-secondary text-xs leading-relaxed">Studio-quality prints on the spot</p>
         </div>
-        <div class="bg-theme-card border border-theme p-8 text-center">
-          <div class="text-3xl mb-5">🎨</div>
-          <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Custom Overlays</h3>
+        <div class="bg-theme-card border border-theme p-5 md:p-8 text-center">
+          <div class="text-3xl mb-4 md:mb-5">🎨</div>
+          <h3 class="text-xs font-semibold tracking-widest uppercase mb-2 md:mb-3">Custom Overlays</h3>
           <p class="text-theme-secondary text-xs leading-relaxed">Branded to your event</p>
         </div>
-        <div class="bg-theme-card border border-theme p-8 text-center">
-          <div class="text-3xl mb-5">✨</div>
-          <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Props &amp; Setup</h3>
+        <div class="bg-theme-card border border-theme p-5 md:p-8 text-center">
+          <div class="text-3xl mb-4 md:mb-5">✨</div>
+          <h3 class="text-xs font-semibold tracking-widest uppercase mb-2 md:mb-3">Props &amp; Setup</h3>
           <p class="text-theme-secondary text-xs leading-relaxed">Full styling included</p>
         </div>
-        <div class="bg-theme-card border border-theme p-8 text-center">
-          <div class="text-3xl mb-5">📲</div>
-          <h3 class="text-xs font-semibold tracking-widest uppercase mb-3">Digital Sharing</h3>
+        <div class="bg-theme-card border border-theme p-5 md:p-8 text-center">
+          <div class="text-3xl mb-4 md:mb-5">📲</div>
+          <h3 class="text-xs font-semibold tracking-widest uppercase mb-2 md:mb-3">Digital Sharing</h3>
           <p class="text-theme-secondary text-xs leading-relaxed">Text &amp; email delivery</p>
         </div>
       </div>
@@ -70,10 +65,11 @@
   </section>
 
   <!-- GALLERY TEASER -->
-  <section class="py-24 px-6 bg-theme-base">
+  <!-- 
+  <section class="py-16 md:py-24 px-6 bg-theme-base">
     <div class="max-w-7xl mx-auto">
       <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">Gallery</p>
-      <h2 class="text-3xl md:text-4xl font-bold mb-14">See the Magic</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-10 md:mb-14">See the Magic</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
         <div class="aspect-square bg-theme-card overflow-hidden"><img src="images/IMG_0219.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
         <div class="aspect-square bg-theme-card overflow-hidden"><img src="images/IMG_0257.JPG" alt="" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"></div>
@@ -87,13 +83,14 @@
       </div>
     </div>
   </section>
+  -->
 
   <!-- PACKAGES TEASER -->
-  <section class="py-24 px-6 bg-theme-section">
+  <section class="py-16 md:py-24 px-6 bg-theme-section">
     <div class="max-w-7xl mx-auto">
       <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">Explore Our Packages</p>
       <h2 class="text-3xl md:text-4xl font-bold mb-5">SNAP, PRINT, MAKE IT YOURS.</h2>
-      <p class="text-theme-secondary text-sm leading-relaxed max-w-xl mb-14">We offer custom photo overlays, a curated prop collection, and branded print designs built around your event's vibe. Perfect for adding a personal, unforgettable touch to any celebration.</p>
+      <p class="text-theme-secondary text-sm leading-relaxed max-w-xl mb-10 md:mb-14">We offer custom photo overlays, a curated prop collection, and branded print designs built around your event's vibe. Perfect for adding a personal, unforgettable touch to any celebration.</p>
       <div id="home-package-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10"></div>
       <div class="text-center">
         <a href="packages.html" class="text-theme-secondary hover-text-primary text-xs tracking-[0.3em] uppercase border-b border-theme pb-1 transition-colors duration-200">View All Packages →</a>
@@ -102,26 +99,26 @@
   </section>
 
   <!-- TESTIMONIAL -->
-  <section class="py-24 px-6 bg-theme-base">
+  <section class="py-16 md:py-24 px-6 bg-theme-base">
     <div class="max-w-3xl mx-auto text-center">
-      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-14">What Clients Say</p>
+      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-8 md:mb-14">What Clients Say</p>
       <blockquote class="text-2xl md:text-3xl font-light leading-relaxed text-theme-primary mb-8">"tinydisco made our wedding unforgettable. Every single guest was obsessed with the booth."</blockquote>
       <cite class="text-theme-secondary text-xs tracking-widest uppercase not-italic">— Nina R., Wedding Client</cite>
     </div>
   </section>
 
   <!-- CTA BANNER -->
-  <section class="py-24 px-6 bg-theme-base text-center">
+  <section class="py-16 md:py-24 px-6 bg-theme-base text-center">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-5">Ready to Make It Memorable?</h2>
-      <p class="text-theme-secondary text-sm tracking-wide mb-12">Serving Greater New York City and Long Island</p>
+      <p class="text-theme-secondary text-sm tracking-wide mb-8 md:mb-12">Serving New York City and Long Island</p>
       <a href="contact.html" class="sparkle-btn"><span class="sparkle-btn__text">Get a Quote</span><span class="sparkle-btn__glare" aria-hidden="true">Get a Quote</span></a>
     </div>
   </section>
 
   <site-footer></site-footer>
 
-  <script src="js/components.js"></script>
+<script src="js/components.js"></script>
   <script src="js/main.js"></script>
   <script src="js/packages.js"></script>
   <script>renderPackageCards('home-package-cards', { condensed: true });</script>

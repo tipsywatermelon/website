@@ -27,8 +27,9 @@ const PACKAGES = [
     tagline: 'The full tinydisco experience',
     popular: false,
     features: [
-      'Everything in Disco Dream, plus:',
+      'Everything in Disco Dream',
       'Keepsakes Station',
+      'Custom Photobook'
     ],
   },
 ];
@@ -40,9 +41,9 @@ function renderPackageCards(containerId, options) {
   const { showCTA = false, condensed = false } = options || {};
 
   el.innerHTML = PACKAGES.map(pkg => {
-    const border = pkg.popular ? 'border-theme-primary/30' : 'border-theme';
+    const border = pkg.popular ? 'border-theme' : 'border-theme-primary';
     const badge = pkg.popular
-      ? `<span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#111111] text-white text-xs font-bold tracking-widest uppercase px-4 py-1 whitespace-nowrap" style="border-radius:2px">Most Popular</span>`
+      ? `<span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 whitespace-nowrap" style="border-radius:2px;background-color:var(--color-border)">Most Popular</span>`
       : '';
 
     const features = condensed
@@ -58,7 +59,7 @@ function renderPackageCards(containerId, options) {
       : '';
 
     return `
-      <div class="bg-theme-card border ${border} p-8 flex flex-col relative min-h-[300px]">
+      <div class="bg-theme-card border ${border} p-8 flex flex-col relative min-h-[250px]">
         ${badge}
         <!--<p class="text-theme-secondary text-xs tracking-widest uppercase mb-2">${pkg.price}</p>-->
         <p class="text-theme-primary text-lg font-semibold mb-1">${pkg.name}</p>

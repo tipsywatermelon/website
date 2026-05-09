@@ -9,29 +9,35 @@
    ============================================================ */
 
 .sparkle-btn {
-  --color:  var(--color-accent, #f5c800);
+  --color:  #FAF4EC /*var(--color-accent, #f5c800)*/;
   --shadow: var(--color-text-secondary, #666666);
-  --glare:  hsl(0 0% 100% / 0.9);
+  --glare:  hsla(52, 100%, 69%, 0.9);
   --size:   0.75rem;
   --hover:  0.4;
   --pos:    0;
   --pad:    0.5rem;
+  --font-weight: 600;
+  --letter-spacing: 1px;
+  --border-radius: 5rem;
+  --background: #304737;
 
   display: inline-block;
   position: relative;
-  padding: var(--pad);
-  border-radius: 0.5rem;
+  padding: var(--pad) calc(var(--pad) * 4);
+  border-radius: var(--border-radius);
   text-decoration: none;
+  text-align: center;
   color: transparent;
-  background: #304737;
+  background: var(--background);
   border: none;
   cursor: pointer;
-  font-family: inherit;
+  /* font-family: 'Playfair Display', serif;
+  font-style: italic; */
   transition: background 0.2s;
 }
 
 .sparkle-btn:hover {
-  background: #304737;
+  background: var(--background);
   --hover: 1;
   --pos: 1;
 }
@@ -49,8 +55,8 @@
 .sparkle-btn__text {
   display: inline-block;
   font-size: calc(var(--size) * 1.5);
-  font-weight: 900;
-  letter-spacing: 0.15em;
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
   color: var(--color);
   text-shadow:
@@ -72,8 +78,8 @@
   inset: var(--pad);
   display: inline-block;
   font-size: calc(var(--size) * 1.5);
-  font-weight: 900;
-  letter-spacing: 0.15em;
+  font-weight: var(--font-weight);
+  letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
   z-index: 2;
   color: transparent;

@@ -6,20 +6,23 @@
 
 :root {
   /* ── Typography ───────────────────────────────────────────── */
-  --font-heading: 'Merriweather', serif;
+  --font-heading: 'Instrument Serif', serif;
 
   /* ── Backgrounds ─────────────────────────────────────────── */
-  --color-bg:         #E8D4BB;       /* page base — Sand */
-  --color-bg-section: #F0E2CA;       /* alternating section fills — light sand */
+  --color-bg:         #FAF4EC;       /* page base — Sand */
+  --color-bg-section: #FAF4EC;       /* sections — same as base */
   --color-bg-card:    #FAF4EC;       /* cards, image placeholders — warm white */
-  --color-bg-nav:     #304737;       /* sticky nav — Forest */
+  --color-bg-nav:     #FAF4EC;      
 
   /* ── Borders ──────────────────────────────────────────────── */
   --color-border:     #D28A7A;       /* Blush */
 
   /* ── Text ─────────────────────────────────────────────────── */
-  --color-text-primary:   #1C1C1E;   /* headings, body — Charcoal */
-  --color-text-secondary: #6B7F6D;   /* captions, meta — Sage */
+  --color-text-primary:   #304737;   /* headings, body — Charcoal */
+  --color-text-secondary: #1C1C1E;   /* captions, meta — Sage */
+
+  /* #6B7F6D */
+  --color-text-nav:       #304737;   /* navbar links — Forest */
 
   /* ── Accent (Marigold) ────────────────────────────────────── */
   --color-accent:      #D9A441;
@@ -29,6 +32,7 @@
 /* ── Headings ───────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  font-style: italic;
 }
 
 /* ── Utility classes ────────────────────────────────────────── */
@@ -42,11 +46,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Borders */
 .border-theme               { border-color: var(--color-border); }
+.border-theme-primary       { border-color: var(--color-text-primary); }
 .divide-theme > * + *       { border-color: var(--color-border); }
 
 /* Text */
 .text-theme-primary         { color: var(--color-text-primary); }
 .text-theme-secondary       { color: var(--color-text-secondary); }
+.text-theme-nav             { color: var(--color-text-nav); }
 .text-theme-accent          { color: var(--color-accent); }
 .text-on-accent             { color: var(--color-accent-text); }
 
