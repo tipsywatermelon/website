@@ -1,0 +1,55 @@
+/* ============================================================
+   TINYDISCO — Design Tokens & Theme Utilities
+   All thematic colors flow through these CSS variables.
+   To retheme the site, edit the values in :root only.
+   ============================================================ */
+
+:root {
+  /* ── Typography ───────────────────────────────────────────── */
+  --font-heading: 'Merriweather', serif;
+
+  /* ── Backgrounds ─────────────────────────────────────────── */
+  --color-bg:         #E8D4BB;       /* page base — Sand */
+  --color-bg-section: #F0E2CA;       /* alternating section fills — light sand */
+  --color-bg-card:    #FAF4EC;       /* cards, image placeholders — warm white */
+  --color-bg-nav:     #304737;       /* sticky nav — Forest */
+
+  /* ── Borders ──────────────────────────────────────────────── */
+  --color-border:     #D28A7A;       /* Blush */
+
+  /* ── Text ─────────────────────────────────────────────────── */
+  --color-text-primary:   #1C1C1E;   /* headings, body — Charcoal */
+  --color-text-secondary: #6B7F6D;   /* captions, meta — Sage */
+
+  /* ── Accent (Marigold) ────────────────────────────────────── */
+  --color-accent:      #D9A441;
+  --color-accent-text: #1C1C1E;      /* text placed ON accent bg — Charcoal */
+}
+
+/* ── Headings ───────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ── Utility classes ────────────────────────────────────────── */
+
+/* Backgrounds */
+.bg-theme-base    { background-color: var(--color-bg); }
+.bg-theme-section { background-color: var(--color-bg-section); }
+.bg-theme-card    { background-color: var(--color-bg-card); }
+.bg-theme-nav     { background-color: var(--color-bg-nav); }
+.bg-theme-accent  { background-color: var(--color-accent); }
+
+/* Borders */
+.border-theme               { border-color: var(--color-border); }
+.divide-theme > * + *       { border-color: var(--color-border); }
+
+/* Text */
+.text-theme-primary         { color: var(--color-text-primary); }
+.text-theme-secondary       { color: var(--color-text-secondary); }
+.text-theme-accent          { color: var(--color-accent); }
+.text-on-accent             { color: var(--color-accent-text); }
+
+/* Hover variants */
+.hover-text-primary:hover   { color: var(--color-text-primary); }
+.hover-text-secondary:hover { color: var(--color-text-secondary); }
