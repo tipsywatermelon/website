@@ -125,7 +125,7 @@
 }
 
 .sparkle-btn:hover svg {
-  animation: sparkle-pop 0.75s calc(0.15s * var(--d, 1)) both;
+  animation: sparkle-pop 0.75s calc(0.15s * var(--d, 1)) infinite;
 }
 
 @keyframes sparkle-pop {
@@ -137,3 +137,39 @@
 .sparkle-btn svg:nth-of-type(3) { --x: 45;  --y: 40; --s: 1.1;  --d: 3; }
 .sparkle-btn svg:nth-of-type(4) { --x: 75;  --y: 60; --s: 0.9;  --d: 2; }
 .sparkle-btn svg:nth-of-type(5) { --x: 100; --y: 30; --s: 0.8;  --d: 4; }
+
+/* ============================================================
+   Sparkle Logo — looping sparkle + glare on navbar logo image
+   Toggle: set SPARKLE_NAV_LOGO in js/main.js
+   ============================================================ */
+
+.sparkle-logo {
+  position: relative;
+  display: inline-block;
+}
+
+
+.sparkle-logo svg {
+  position: absolute;
+  z-index: 3;
+  width: 0.55rem;
+  aspect-ratio: 1;
+  top:  calc(var(--y, 50) * 1%);
+  left: calc(var(--x, 50) * 1%);
+  animation: logo-sparkle 3s calc(var(--d) * 0.35s) infinite;
+}
+
+.sparkle-logo svg path { fill: #D9A441; }
+
+@keyframes logo-sparkle {
+  0%, 33%, 100% { transform: translate(-50%, -50%) scale(0); }
+  17%           { transform: translate(-50%, -50%) scale(var(--s, 1)); }
+}
+
+.sparkle-logo--lg svg { width: 1rem; }
+
+.sparkle-logo svg:nth-of-type(1) { --x: 2;  --y: 25; --s: 1.0; --d: 1; }
+.sparkle-logo svg:nth-of-type(2) { --x: 98; --y: 65; --s: 0.9; --d: 2; }
+.sparkle-logo svg:nth-of-type(3) { --x: 50; --y: 5;  --s: 0.8; --d: 3; }
+.sparkle-logo svg:nth-of-type(4) { --x: 18; --y: 90; --s: 1.1; --d: 4; }
+.sparkle-logo svg:nth-of-type(5) { --x: 85; --y: 10; --s: 0.9; --d: 5; }

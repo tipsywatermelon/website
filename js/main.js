@@ -109,10 +109,79 @@ function initSparkleButtons() {
   });
 }
 
+// ─── Sparkle Nav Logo ─────────────────────────────────────────────────────────
+// Set to false to disable the looping sparkle + glare on the navbar logo
+const SPARKLE_NAV_LOGO = true;
+
+function initNavLogoSparkle() {
+  if (!SPARKLE_NAV_LOGO) return;
+  const SPARKLE_SVG = '<svg viewBox="0 0 96 96" fill="none" aria-hidden="true"><path d="M93.781 51.578C95 50.969 96 49.359 96 48c0-1.375-1-2.969-2.219-3.578 0 0-22.868-1.514-31.781-10.422-8.915-8.91-10.438-31.781-10.438-31.781C50.969 1 49.375 0 48 0s-2.969 1-3.594 2.219c0 0-1.5 22.87-10.406 31.781-8.908 8.913-31.781 10.422-31.781 10.422C1 45.031 0 46.625 0 48c0 1.359 1 2.969 2.219 3.578 0 0 22.873 1.51 31.781 10.422 8.906 8.911 10.406 31.781 10.406 31.781C45.031 95 46.625 96 48 96s2.969-1 3.562-2.219c0 0 1.523-22.871 10.438-31.781 8.913-8.908 31.781-10.422 31.781-10.422Z" fill="#fff"/></svg>';
+  document.querySelectorAll('.sparkle-logo').forEach(el => {
+    el.insertAdjacentHTML('afterbegin', SPARKLE_SVG.repeat(5));
+  });
+}
+
+// ─── Founder's Rate ───────────────────────────────────────────────────────────
+// Set active: false to disable all callouts across the site
+const FOUNDERS_RATE = { active: true };
+
+function initFoundersRate() {
+  if (!FOUNDERS_RATE.active) return;
+
+  // Wrap banner + site-nav in a single sticky block so the browser
+  // naturally pushes all page content below their combined height.
+  const topbar = document.createElement('div');
+  topbar.id = 'topbar';
+  document.body.insertBefore(topbar, document.body.firstChild);
+
+  const banner = document.createElement('div');
+  banner.id = 'founders-rate-banner';
+  banner.innerHTML = `✦ Founder's Rate — 20% off all packages for early bookers<a href="packages.html">See packages →</a>`;
+  topbar.appendChild(banner);
+
+  const siteNav = document.querySelector('site-nav');
+  if (siteNav) topbar.appendChild(siteNav); // moves site-nav into topbar; CSS handles sticky on topbar
+
+  // Homepage: callout between features and packages sections
+  const homePackagesEl = document.getElementById('home-package-cards');
+  if (homePackagesEl) {
+    const packagesSection = homePackagesEl.closest('section');
+    if (packagesSection) {
+      const callout = document.createElement('section');
+      callout.className = 'founders-rate-homepage';
+      callout.innerHTML = `
+        <div class="fr-eyebrow">Limited Time Offer</div>
+        <h2>Founder's Rate — 20% Off</h2>
+        <p>Book now and lock in 20% off any package. Available to our first wave of clients only.</p>
+        <a href="packages.html" class="fr-btn">View Packages →</a>
+      `;
+      packagesSection.before(callout);
+    }
+  }
+
+  // Packages page: callout above package cards
+  const pkgCardsEl = document.getElementById('packages-page-cards');
+  if (pkgCardsEl) {
+    const callout = document.createElement('div');
+    callout.className = 'founders-rate-packages';
+    callout.innerHTML = `
+      <div>
+        <div class="fr-tag">✦ Founder's Rate</div>
+        <strong>20% Off All Packages</strong>
+        <span>Available for early bookings — lock in your rate today.</span>
+      </div>
+      <a href="contact.html">Book Now →</a>
+    `;
+    pkgCardsEl.before(callout);
+  }
+}
+
 // ─── Init ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  initNav();
+  initFoundersRate();  // moves site-nav into #topbar first
+  initNav();           // then attaches listeners to the freshly placed nav
+  initSparkleButtons();
+  initNavLogoSparkle();
   initAccordion();
   initLightbox();
-  initSparkleButtons();
 });

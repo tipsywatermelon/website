@@ -59,3 +59,115 @@ h1, h2, h3, h4, h5, h6 {
 /* Hover variants */
 .hover-text-primary:hover   { color: var(--color-text-primary); }
 .hover-text-secondary:hover { color: var(--color-text-secondary); }
+
+/* ── Sticky header: site-nav alone (no banner) ──────────────────────────────── */
+site-nav {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* When the banner is active, #topbar wraps both banner + site-nav */
+#topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+#topbar site-nav {
+  position: static;
+}
+
+/* ── Founder's Rate Promotion ───────────────────────────────────────────────── */
+
+#founders-rate-banner {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  text-align: center;
+  padding: 0.45rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#founders-rate-banner a {
+  color: var(--color-accent-text);
+  text-decoration: underline;
+  margin-left: 0.6rem;
+  font-weight: 600;
+}
+
+.founders-rate-homepage {
+  background: var(--color-text-primary);
+  color: var(--color-bg);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.founders-rate-homepage .fr-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+}
+.founders-rate-homepage h2 {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+.founders-rate-homepage p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  max-width: 32rem;
+  margin: 0 auto 1.5rem;
+}
+.founders-rate-homepage a.fr-btn {
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  text-decoration: none;
+}
+
+.founders-rate-packages {
+  border: 1.5px solid var(--color-accent);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.founders-rate-packages .fr-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.founders-rate-packages strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+}
+.founders-rate-packages span {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+.founders-rate-packages a {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  text-decoration: underline;
+  white-space: nowrap;
+}

@@ -1,34 +1,34 @@
 const PACKAGES = [
   {
     name: 'Groove',
-    price: 'Starting at $X',
+    price: 'Starting at $900',
     tagline: 'Perfect for intimate gatherings',
     popular: false,
     features: [
       '3-hour rental',
       'Unlimited photos (digital only)',
+      'Black / white backdrop',
     ],
   },
   {
     name: 'Disco Dream',
-    price: 'Starting at $X',
+    price: 'Starting at $1600',
     tagline: 'Our most booked package',
     popular: true,
     features: [
       '4-hour rental',
       'Unlimited photos & prints',
       'Backdrop of your choice',
-      'Optional Props',
     ],
   },
   {
     name: 'Mirrorball Deluxe',
-    price: 'Starting at $X',
+    price: 'Starting at $1800',
     tagline: 'The full tinydisco experience',
     popular: false,
     features: [
       'Everything in Disco Dream',
-      'Keepsakes Station',
+      'Keychain Keepsakes Station',
       'Custom Photobook'
     ],
   },
@@ -43,7 +43,7 @@ function renderPackageCards(containerId, options) {
   el.innerHTML = PACKAGES.map(pkg => {
     const border = pkg.popular ? 'border-theme' : 'border-theme-primary';
     const badge = pkg.popular
-      ? `<span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 whitespace-nowrap" style="border-radius:2px;background-color:var(--color-border)">Most Popular</span>`
+      ? `<span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 whitespace-nowrap" style="border-radius:2px;background-color:var(--color-border)">Highly Recommended</span>`
       : '';
 
     const features = condensed
@@ -61,7 +61,7 @@ function renderPackageCards(containerId, options) {
     return `
       <div class="bg-theme-card border ${border} p-8 flex flex-col relative min-h-[250px]">
         ${badge}
-        <!--<p class="text-theme-secondary text-xs tracking-widest uppercase mb-2">${pkg.price}</p>-->
+        <p class="text-theme-secondary text-xs tracking-widest uppercase mb-2">${pkg.price}</p>
         <p class="text-theme-primary text-lg font-semibold mb-1">${pkg.name}</p>
         <p class="text-theme-secondary text-xs mb-6">${pkg.tagline}</p>
         <ul class="flex flex-col gap-2 flex-1">${featureItems}</ul>
