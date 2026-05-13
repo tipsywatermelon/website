@@ -5,14 +5,14 @@ class SiteNav extends HTMLElement {
   <!-- NAV -->
   <nav class="w-full bg-theme-nav backdrop-blur-sm border-b border-theme" style="min-height: 68px;">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="index.html" class="sparkle-logo text-theme-primary font-medium tracking-[0.25em] uppercase text-lg"><img src="images/logo_h.png" alt="TINYDISCO" style="height: 2rem;"></a>
+      <a href="/" class="sparkle-logo text-theme-primary font-medium tracking-[0.25em] uppercase text-lg"><img src="/images/logo_h.png" alt="TINYDISCO" style="height: 2rem;"></a>
       <ul class="hidden md:flex items-center gap-8">
         <!-- hide gallery for now since we don't have it ready -->
-        <!--<li><a href="gallery.html"  class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">Gallery</a></li>-->
-        <li><a href="packages.html" class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">Packages</a></li>
-        <li><a href="about.html"    class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">About</a></li>
-        <li><a href="faq.html"      class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">FAQ</a></li>
-        <li><a href="contact.html" class="sparkle-btn"><span class="sparkle-btn__text">Inquire Now</span><span class="sparkle-btn__glare" aria-hidden="true">Inquire Now</span></a></li>
+        <!--<li><a href="/gallery"  class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">Gallery</a></li>-->
+        <li><a href="/packages" class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">Packages</a></li>
+        <li><a href="/about"    class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">About</a></li>
+        <li><a href="/faq"      class="text-theme-nav text-sm font-medium tracking-widest uppercase transition-colors duration-200 font-['Instrument_Sans']">FAQ</a></li>
+        <li><a href="/contact" class="sparkle-btn"><span class="sparkle-btn__text">Inquire Now</span><span class="sparkle-btn__glare" aria-hidden="true">Inquire Now</span></a></li>
       </ul>
       <button id="hamburger" class="md:hidden text-theme-primary p-1" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,11 +30,11 @@ class SiteNav extends HTMLElement {
       </svg>
     </button>
     <ul class="flex flex-col items-center gap-10">
-      <li><a href="index.html"    class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">Home</a></li>
-      <li><a href="packages.html" class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">Packages</a></li>
-      <li><a href="about.html"    class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">About</a></li>
-      <li><a href="faq.html"      class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">FAQ</a></li>
-      <li><a href="contact.html"  class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">Inquire Now</a></li>
+      <li><a href="/"         class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">Home</a></li>
+      <li><a href="/packages" class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">Packages</a></li>
+      <li><a href="/about"    class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">About</a></li>
+      <li><a href="/faq"      class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">FAQ</a></li>
+      <li><a href="/contact"  class="text-theme-nav text-2xl tracking-[0.2em] uppercase font-['Instrument_Sans']">Inquire Now</a></li>
     </ul>
   </div>`;
   }

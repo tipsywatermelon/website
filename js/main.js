@@ -136,7 +136,7 @@ function initFoundersRate() {
 
   const banner = document.createElement('div');
   banner.id = 'founders-rate-banner';
-  banner.innerHTML = `✦ Founder's Rate — 20% off all packages for early bookers<a href="packages.html">See packages →</a>`;
+  banner.innerHTML = `✦ Founder's Rate — 20% off all packages for early bookers<a href="/packages">See packages →</a>`;
   topbar.appendChild(banner);
 
   const siteNav = document.querySelector('site-nav');
@@ -153,7 +153,7 @@ function initFoundersRate() {
         <div class="fr-eyebrow">Limited Time Offer</div>
         <h2>Founder's Rate — 20% Off</h2>
         <p>Book now and lock in 20% off any package. Available to our first wave of clients only.</p>
-        <a href="packages.html" class="fr-btn">View Packages →</a>
+        <a href="/packages" class="fr-btn">View Packages →</a>
       `;
       packagesSection.before(callout);
     }
@@ -170,7 +170,7 @@ function initFoundersRate() {
         <strong>20% Off All Packages</strong>
         <span>Available for early bookings — lock in your rate today.</span>
       </div>
-      <a href="contact.html">Book Now →</a>
+      <a href="/contact">Book Now →</a>
     `;
     pkgCardsEl.before(callout);
   }

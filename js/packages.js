@@ -55,7 +55,7 @@ function renderPackageCards(containerId, options) {
       .join('');
 
     const cta = showCTA
-      ? `<div class="text-center mt-10"><a href="contact.html" class="sparkle-btn"><span class="sparkle-btn__text">Inquire</span><span class="sparkle-btn__glare" aria-hidden="true">Inquire</span></a></div>`
+      ? `<div class="text-center mt-10"><a href="/contact" class="sparkle-btn"><span class="sparkle-btn__text">Inquire</span><span class="sparkle-btn__glare" aria-hidden="true">Inquire</span></a></div>`
       : '';
 
     return `
