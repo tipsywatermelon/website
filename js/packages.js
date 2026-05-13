@@ -13,7 +13,7 @@ const PACKAGES = [
   {
     name: 'Disco Dream',
     price: 'Starting at $1600',
-    tagline: 'Our most booked package',
+    tagline: 'The sweet spot',
     popular: true,
     features: [
       '4-hour rental',
