@@ -122,11 +122,14 @@ function initNavLogoSparkle() {
 }
 
 // ─── Founder's Rate ───────────────────────────────────────────────────────────
-// Set active: false to disable all callouts across the site
-const FOUNDERS_RATE = { active: true };
+// Controlled entirely by PRICING in packages.js — set discountPct to 0 to
+// disable the banner, callouts, and strikethrough pricing everywhere.
 
 function initFoundersRate() {
-  if (!FOUNDERS_RATE.active) return;
+  if (typeof PRICING === 'undefined' || !PRICING.discountPct) return;
+
+  const pct = PRICING.discountPct;
+  const label = PRICING.discountLabel;
 
   // Wrap banner + site-nav in a single sticky block so the browser
   // naturally pushes all page content below their combined height.
@@ -136,7 +139,7 @@ function initFoundersRate() {
 
   const banner = document.createElement('div');
   banner.id = 'founders-rate-banner';
-  banner.innerHTML = `✦ Founder's Rate — 20% off all packages for early bookers<a href="/packages">See packages →</a>`;
+  banner.innerHTML = `✦ ${label} — ${pct}% off all packages for early bookers<a href="/packages">See packages →</a>`;
   topbar.appendChild(banner);
 
   const siteNav = document.querySelector('site-nav');
@@ -151,8 +154,8 @@ function initFoundersRate() {
       callout.className = 'founders-rate-homepage';
       callout.innerHTML = `
         <div class="fr-eyebrow">Limited Time Offer</div>
-        <h2>Founder's Rate — 20% Off</h2>
-        <p>Book now and lock in 20% off any package. Available to our first wave of clients only.</p>
+        <h2>${label} — ${pct}% Off</h2>
+        <p>${PRICING.discountSubtitle}</p>
         <a href="/packages" class="fr-btn">View Packages →</a>
       `;
       packagesSection.before(callout);
@@ -166,9 +169,9 @@ function initFoundersRate() {
     callout.className = 'founders-rate-packages';
     callout.innerHTML = `
       <div>
-        <div class="fr-tag">✦ Founder's Rate</div>
-        <strong>20% Off All Packages</strong>
-        <span>Available for early bookings — lock in your rate today.</span>
+        <div class="fr-tag">✦ ${label}</div>
+        <strong>${pct}% Off All Packages</strong>
+        <span>${PRICING.discountSubtitle}</span>
       </div>
       <a href="/contact">Book Now →</a>
     `;

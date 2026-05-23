@@ -1,7 +1,22 @@
+// ─── Pricing config ───────────────────────────────────────────────────────────
+// Set discountPct to a number 0–100 to apply a site-wide discount,
+// or set it to 0 to show regular prices with no strikethrough.
+const PRICING = {
+  discountPct: 20,
+  discountLabel: "Founder's Rate",
+  discountSubtitle: "Book now and lock in your rate. Available to our first wave of clients only.",
+};
+
+function discountedPrice(base) {
+  if (!PRICING.discountPct) return null;
+  return Math.round(base * (1 - PRICING.discountPct / 100));
+}
+
+// ─── Packages ─────────────────────────────────────────────────────────────────
 const PACKAGES = [
   {
     name: 'Groove',
-    price: 'Starting at $900',
+    basePrice: 800,
     tagline: 'Perfect for intimate gatherings',
     popular: false,
     features: [
@@ -12,7 +27,7 @@ const PACKAGES = [
   },
   {
     name: 'Disco Dream',
-    price: 'Starting at $1600',
+    basePrice: 1500,
     tagline: 'The sweet spot',
     popular: true,
     features: [
@@ -23,17 +38,41 @@ const PACKAGES = [
   },
   {
     name: 'Mirrorball Deluxe',
-    price: 'Starting at $1800',
+    basePrice: 1700,
     tagline: 'The full tinydisco experience',
     popular: false,
     features: [
       'Everything in Disco Dream',
       'Keychain Keepsakes Station',
-      'Custom Photobook'
+      'Custom Photobook',
     ],
   },
 ];
 
+// ─── Price display ────────────────────────────────────────────────────────────
+function formatPrice(n) {
+  return '$' + n.toLocaleString();
+}
+
+function renderPrice(pkg) {
+  const sale = discountedPrice(pkg.basePrice);
+  const label = `Starting at ${formatPrice(pkg.basePrice)}`;
+
+  if (!sale) {
+    return `<p class="text-theme-secondary text-xs tracking-widest uppercase mb-2">${label}</p>`;
+  }
+
+  return `
+    <div class="mb-2 flex flex-col gap-0.5">
+      <span class="text-xs font-bold" style="color:var(--color-border)">-${PRICING.discountPct}% LIMITED OFFER</span>
+      <div class="flex items-baseline gap-2">
+        <span class="text-theme-primary text-base font-semibold">Starting at ${formatPrice(sale)}</span>
+        <span class="text-theme-secondary text-xs line-through">${formatPrice(pkg.basePrice)}</span>
+      </div>
+    </div>`;
+}
+
+// ─── Renderer ─────────────────────────────────────────────────────────────────
 function renderPackageCards(containerId, options) {
   const el = document.getElementById(containerId);
   if (!el) return;
@@ -46,10 +85,7 @@ function renderPackageCards(containerId, options) {
       ? `<span class="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-bold tracking-widest uppercase px-4 py-1 whitespace-nowrap" style="border-radius:2px;background-color:var(--color-border)">Highly Recommended</span>`
       : '';
 
-    const features = condensed
-      ? pkg.features.slice(0, 3)
-      : pkg.features;
-
+    const features = condensed ? pkg.features.slice(0, 3) : pkg.features;
     const featureItems = features
       .map(f => `<li class="flex items-start gap-3"><span class="text-theme-primary text-xs mt-0.5 flex-shrink-0">✓</span><span class="text-theme-secondary text-sm">${f}</span></li>`)
       .join('');
@@ -61,7 +97,7 @@ function renderPackageCards(containerId, options) {
     return `
       <div class="bg-theme-card border ${border} p-8 flex flex-col relative min-h-[250px]">
         ${badge}
-        <p class="text-theme-secondary text-xs tracking-widest uppercase mb-2">${pkg.price}</p>
+        ${renderPrice(pkg)}
         <p class="text-theme-primary text-lg font-semibold mb-1">${pkg.name}</p>
         <p class="text-theme-secondary text-xs mb-6">${pkg.tagline}</p>
         <ul class="flex flex-col gap-2 flex-1">${featureItems}</ul>

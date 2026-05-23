@@ -1,76 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Now — TINYDISCO</title>
-  <link rel="icon" type="image/png" href="/images/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Tenor+Sans&display=fallback" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter','sans-serif'] } } } }</script>
-  <link rel="stylesheet" href="/css/button.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <script src="/js/analytics.js"></script>
-</head>
-<body class="bg-theme-base text-theme-primary font-sans antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Now — TINYDISCO</title>
+    <link rel="icon" type="image/png" href="/images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:ital@0;1&family=Tenor+Sans&display=fallback"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } },
+      };
+    </script>
+    <link rel="stylesheet" href="/css/button.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <script src="/js/analytics.js"></script>
+  </head>
+  <body class="bg-theme-base text-theme-primary font-sans antialiased">
+    <site-nav></site-nav>
 
-  <site-nav></site-nav>
-
-  <!-- PAGE HERO -->
-  <section class="pt-16 pb-16 px-6">
-    <div class="max-w-7xl mx-auto">
-      <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">Let's Talk</p>
-      <h1 class="text-4xl md:text-5xl font-bold">Time to get the party started!</h1>
-    </div>
-  </section>
-
-  <!-- FORM + SIDEBAR -->
-  <section class="pb-24 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
-
-      <!-- TALLY FORM EMBED -->
-      <div class="w-full">
-        <iframe data-tally-src="https://tally.so/embed/EkBZMB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
-          title="Book Your Event"></iframe>
-        <script>
-          var d=document,w="https://tally.so/widgets/embed.js",
-          v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc})};
-          if("undefined"!=typeof Tally)v();
-          else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-        </script>
+    <!-- PAGE HERO -->
+    <section class="pt-16 pb-16 px-6">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-theme-secondary text-xs tracking-[0.4em] uppercase mb-3">
+          Let's Talk
+        </p>
+        <h1 class="text-4xl md:text-5xl font-bold">
+          Time to get the party started!
+        </h1>
       </div>
+    </section>
 
-      <!-- SIDEBAR -->
-      <div class="flex flex-col gap-10">
-        <div>
-          <p class="text-xs tracking-widest uppercase text-theme-secondary mb-3">Response Time</p>
-          <p class="text-sm text-theme-primary leading-relaxed">We respond to all inquiries within 24 to 48hours. For urgent requests, email us directly.</p>
+    <!-- FORM + SIDEBAR -->
+    <section class="pb-24 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+        <!-- TALLY FORM EMBED -->
+        <div class="w-full">
+          <iframe
+            data-tally-src="https://tally.so/embed/EkBZMB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="600"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+            title="Book Your Event"
+          ></iframe>
+          <script>
+            var d = document,
+              w = 'https://tally.so/widgets/embed.js',
+              v = function () {
+                'undefined' != typeof Tally
+                  ? Tally.loadEmbeds()
+                  : d
+                      .querySelectorAll('iframe[data-tally-src]:not([src])')
+                      .forEach(function (e) {
+                        e.src = e.dataset.tallySrc;
+                      });
+              };
+            if ('undefined' != typeof Tally) v();
+            else if (d.querySelector('script[src="' + w + '"]') == null) {
+              var s = d.createElement('script');
+              ((s.src = w),
+                (s.onload = v),
+                (s.onerror = v),
+                d.body.appendChild(s));
+            }
+          </script>
         </div>
-        <div>
-          <p class="text-xs tracking-widest uppercase text-theme-secondary mb-3">Contact</p>
-          <a href="mailto:hello@tinydiscophotobooth.com" class="text-sm text-theme-primary hover-text-secondary transition-colors duration-200">hello@tinydiscophotobooth.com</a>
-        </div>
-        <div>
-          <p class="text-xs tracking-widest uppercase text-theme-secondary mb-3">Follow Us</p>
-          <a href="https://www.instagram.com/tinydiscophotobooth" target="_blank" class="text-sm text-theme-primary hover-text-secondary transition-colors duration-200">IG: @tinydiscophotobooth</a>
-        </div>
-        <div class="bg-theme-section border border-theme p-8">
-          <p class="text-xs tracking-widest uppercase text-theme-secondary mb-4">Packages start at</p>
-          <p class="text-3xl font-bold mb-2">$900</p>
-          <p class="text-theme-secondary text-xs mb-6">Serving New York City and Long Island</p>
-          <a href="/packages" class="text-xs tracking-widest uppercase text-theme-secondary hover-text-primary border-b border-theme pb-1 transition-colors duration-200">View All Packages →</a>
+
+        <!-- SIDEBAR -->
+        <div class="flex flex-col gap-10">
+          <div>
+            <p
+              class="text-xs tracking-widest uppercase text-theme-secondary mb-3"
+            >
+              Response Time
+            </p>
+            <p class="text-sm text-theme-primary leading-relaxed">
+              We respond to all inquiries within 24 to 48hours. For urgent
+              requests, email us directly.
+            </p>
+          </div>
+          <div>
+            <p
+              class="text-xs tracking-widest uppercase text-theme-secondary mb-3"
+            >
+              Contact
+            </p>
+            <a
+              href="mailto:hello@tinydiscophotobooth.com"
+              class="text-sm text-theme-primary hover-text-secondary transition-colors duration-200"
+              >hello@tinydiscophotobooth.com</a
+            >
+          </div>
+          <div>
+            <p
+              class="text-xs tracking-widest uppercase text-theme-secondary mb-3"
+            >
+              Follow Us
+            </p>
+            <a
+              href="https://www.instagram.com/tinydiscophotobooth"
+              target="_blank"
+              class="text-sm text-theme-primary hover-text-secondary transition-colors duration-200"
+              >IG: @tinydiscophotobooth</a
+            >
+          </div>
+          <div
+            class="bg-theme-section border border-theme p-8"
+            id="contact-pricing-callout"
+          >
+            <p
+              class="text-xs tracking-widest uppercase text-theme-secondary mb-4"
+            >
+              Packages start at
+            </p>
+            <p class="text-3xl font-bold mb-2" id="contact-start-price"></p>
+            <!--populated by the packages.js script and the custom script below-->
+            <p class="text-theme-secondary text-xs mb-6">
+              Serving New York City and Long Island
+            </p>
+            <a
+              href="/packages"
+              class="text-xs tracking-widest uppercase text-theme-secondary hover-text-primary border-b border-theme pb-1 transition-colors duration-200"
+              >View All Packages →</a
+            >
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <site-footer></site-footer>
 
-  <site-footer></site-footer>
-
-  <script src="/js/components.js"></script>
-  <script src="/js/main.js"></script>
-</body>
+    <script src="/js/components.js"></script>
+    <script src="/js/packages.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const basePrice = Math.min(...PACKAGES.map((p) => p.basePrice));
+        const sale = discountedPrice(basePrice);
+        const el = document.getElementById('contact-start-price');
+        if (el) {
+          if (sale) {
+            el.innerHTML = `${formatPrice(sale)} <span style="text-decoration:line-through;font-size:0.65em;font-weight:400;color:var(--color-text-secondary)">${formatPrice(basePrice)}</span>`;
+          } else {
+            el.textContent = formatPrice(basePrice);
+          }
+        }
+      });
+    </script>
+  </body>
 </html>
